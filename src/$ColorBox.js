@@ -74,7 +74,7 @@ function $ColorBox(){
 	// the one color editted by "Edit Colors..."
 	let $last_fg_color_button;
 	
-	// TODO: base this on the element sizes
+	// @TODO: base this on the element sizes
 	const width_per_button = 16;
 	
 	function set_color(col){
@@ -118,7 +118,7 @@ function $ColorBox(){
 		$i.val(color_to_hex(color));
 		
 		$b.on("pointerdown", e => {
-			// TODO: how should the ternary color, and selection cropping, work on macOS?
+			// @TODO: how should the ternary color, and selection cropping, work on macOS?
 			ctrl = e.ctrlKey;
 			button = e.button;
 			if(button === 0){
@@ -163,7 +163,7 @@ function $ColorBox(){
 		// Edit the last color cell that's been selected as the foreground color.
 		create_and_trigger_input({type: "color"}, input => {
 			// window.console && console.log(input, input.value);
-			// FIXME
+			// @FIXME
 			$last_fg_color_button.trigger({type: "pointerdown", ctrlKey: false, button: 0});
 			$last_fg_color_button.find("input").val(input.value).triggerHandler("change");
 		})

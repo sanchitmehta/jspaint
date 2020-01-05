@@ -134,7 +134,7 @@ $news_indicator.on("click auxclick", (event)=> {
 	event.preventDefault();
 	show_news();
 });
-// TODO: use localstorage to show until clicked, if available
+// @TODO: use localstorage to show until clicked, if available
 // and show for a longer period of time after the update, if available
 if (Date.now() < Date.parse("Jan 5 2020 23:42:42 GMT-0500")) {
 	$status_area.append($news_indicator);
@@ -232,7 +232,7 @@ $G.on("keydown", e => {
 		e.preventDefault();
 		return;
 	}
-	// TODO: return if menus/menubar focused or focus in dialog window
+	// @TODO: return if menus/menubar focused or focus in dialog window
 	// or maybe there's a better way to do this that works more generally
 	// maybe it should only handle the event if document.activeElement is the body or html element?
 	// (or $app could have a tabIndex and no focus style and be focused under various conditions,
@@ -244,7 +244,7 @@ $G.on("keydown", e => {
 		return;
 	}
 
-	// TODO: preventDefault in all cases where the event is handled
+	// @TODO: preventDefault in all cases where the event is handled
 	// also, ideally check that modifiers *aren't* pressed
 	// probably best to use a library at this point!
 	
@@ -456,7 +456,7 @@ reset_colors();
 reset_canvas_and_history(); // (with newly reset colors)
 set_magnification(default_magnification);
 
-// this is synchronous for now, but TODO: handle possibility of loading a document before callback
+// this is synchronous for now, but @TODO: handle possibility of loading a document before callback
 // when switching to asynchronous storage, e.g. with localforage
 storage.get({
 	width: default_canvas_width,

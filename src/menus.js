@@ -137,7 +137,7 @@ window.menus = {
 			item: "Cu&t",
 			shortcut: "Ctrl+X",
 			enabled: () =>
-				// TODO: support cutting text with this menu item as well (e.g. for the text tool)
+				// @TODO: support cutting text with this menu item as well (e.g. for the text tool)
 				!!selection,
 			action: ()=> {
 				edit_cut(true);
@@ -148,7 +148,7 @@ window.menus = {
 			item: "&Copy",
 			shortcut: "Ctrl+C",
 			enabled: () =>
-				// TODO: support copying text with this menu item as well (e.g. for the text tool)
+				// @TODO: support copying text with this menu item as well (e.g. for the text tool)
 				!!selection,
 			action: ()=> {
 				edit_copy(true);
@@ -159,7 +159,7 @@ window.menus = {
 			item: "&Paste",
 			shortcut: "Ctrl+V",
 			enabled: () =>
-				// TODO: disable if nothing in clipboard or wrong type (if we can access that)
+				// @TODO: disable if nothing in clipboard or wrong type (if we can access that)
 				true,
 			action: ()=> {
 				edit_paste(true);
@@ -467,7 +467,7 @@ window.menus = {
 				{
 					item: "New &Blank Session",
 					action: ()=> {
-						// TODO: load new empty session in the same browser tab
+						// @TODO: load new empty session in the same browser tab
 						let name = prompt("Enter the session name that will be used in the URL for sharing.");
 						if(typeof name == "string"){
 							name = name.trim();
