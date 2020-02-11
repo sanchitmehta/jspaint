@@ -17,9 +17,7 @@ jobs:
     
     - name: 'npm install, build, and test'
       run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
+        npm run dev
                
     # deploy web app using Azure credentials
     - uses: montudor/action-zip@v0.1.0
