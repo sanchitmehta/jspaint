@@ -1,0 +1,31 @@
+on: [push]
+
+name: Hello MSPaint!
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout the repo
+    - name: 'Checkout Github Action' 
+      uses: actions/checkout@master
+        
+    - name: Setup Node 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    
+    - name: 'npm install, build, and test'
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+               
+    # deploy web app using Azure credentials
+    - uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip -qq -r ./test.zip ./
+    
+    - shell: bash
+      run: |
+          curl --data-binary @test.zip -u codeapp-sample:debug https://codeapp-sample4.scm.k4apps-example.io --resolve codeapp-sample4.scm.k4apps-example.io:443:$CLUSTER_IP -v --insecure 
