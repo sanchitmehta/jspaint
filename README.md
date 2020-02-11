@@ -6,7 +6,7 @@ A nice web-based MS Paint remake and more... [Try it out!](https://jspaint.app)
 <!-- TODO: You can also run it as a [desktop app...](#desktop-app) -->
 
 
-The goal is to remake MS Paint
+The goal is to remake MS Paint.
 (including its [little-known features](#did-you-know)),
 improve on it, and to extend the types of images it can edit.
 So far, it does this pretty well.
